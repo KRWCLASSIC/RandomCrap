@@ -1,0 +1,132 @@
+/**
+ * @name Frosted Glass
+ * @author Gibbu#1211
+ * @version 2.0.0
+ * @description Display your picture of choice with adjustable blur and brightness. Dark theme is required.
+ * @invite ZHthyCw
+ * @donate https://paypal.me/IanRGibson
+ * @authorId 174868361040232448
+ * @source https://github.com/DiscordStyles/FrostedGlass
+ * @website https://gibbu.me/
+*/
+
+@import url("https://discordstyles.github.io/FrostedGlass/dist/FrostedGlass.css");
+
+/* BlackBox tags */
+@import url('https://monstrousdev.github.io/themes/addons/user-tags.css');
+
+/* Old Windows titlebar - remove this @import if you wish to use default titlebar */
+@import url("https://gibbu.github.io/BetterDiscord-Themes/addons/windows-titlebar.css");
+
+:root {
+  /* Background image variables */
+  --background-image: url('https://i.imgur.com/kYW2H5C.jpg'); /* Main background image | URL MUST BE A DIRECT LINK (ending in .jpg, .jpeg, .png, .gif) */
+  --background-image-blur: 5px; /* Blur intensity of --background-image | Must end in px | DEFAULT: 5px */
+  --background-image-size: cover; /* Size of the background image | DEFAUT: cover | OPTIONS: cover, contain */
+  --background-image-position: center; /* Position of background image | DEAFULT: center | OPTIONS: top, right, bottom, left, center */
+
+  /* Popout & Modal variables */
+  --popout-modal-image: var(--background-image); /* Background image for popouts and modals | URL MUST BE A DIRECT LINK (ending in .jpg, .jpeg, .png, .gif) */
+  --popout-modal-blur: 5px; /* Blur intensity of --popout-modal-image | Must end in px | DEFAULT: 5px */
+  --popout-modal-size: cover; /* Size of the popout/modal image | DEFAUT: cover | OPTIONS: cover, contain */
+  --popout-modal-position: center; /* Position of popout/modal image | DEAFULT: center | OPTIONS: top, right, bottom, left, center */
+
+  /* Home image variables */
+  --home-button-image: url('https://gibbu.github.io/BetterDiscord-Themes/FrostedGlass/assets/discord.svg'); /* Home button image | URL MUST BE A DIRECT LINK (ending in .jpg, .jpeg, .png, .gif) */
+  --home-button-size: cover; /* Size of the home button image | DEFAUT: cover */
+  --home-button-position: center; /* Position of home button image | DEAFULT: center */
+
+  /* Brightness variables */
+  --serverlist-brightness: 0.8; /* Brightness for serverlist | 0 - 1 (decimals allowed) | DEFAULT: 0.8 */
+  --left-brightness: 0.8; /* Channels and DM list brightness | 0 - 1 (decimals allowed) | DEFAULT: 0.8 */
+  --middle-brightness: 0.6; /* Chat brightness | 0 - 1 (decimals allowed) | DEFAULT: 0.6 */
+  --right-brightness: 0; /* Members and Now Playing brightness | 0 - 1 (decimals allowed) | DEFAULT: 0 */
+  --popout-modal-brightness: 0.75; /* Brightness for popouts and modals | 0 - 1 (decimals allowed) | DEFAULT: 0.75 */
+
+  /* Gradient variables */
+  --gradient-primary: 103,58,183; /* DEFAULT: 103,58,183 */
+  --gradient-secondary: 63,81,181; /* DEFAULT: 63,81,181 */
+  --gradient-direction: 320deg; /* DEFAULT: 320deg */
+
+  /* Tint variables */
+  --tint-colour: 255,51,159; /* Colour of tint | DEAFULT: 255,51,159 */
+  --tint-brightness: 0; /* Brightness of --tint-colour | 0 - 1 (decimals allowed) | DEFAULT: 0 */
+
+  /* Other variables */
+  --window-padding: 10px; /* Spacing around the Discord window | DEFAULT: 20px */
+  --window-roundness: 10px; /* Roundness of Discord | DEFAULT: 10px */
+  --scrollbar-colour: rgba(255,255,255,0.05); /* DEFAULT: rgba(255,255,255,0.05) */
+  --link-colour: #00b0f4; /* DEFAULT: #00b0f4 */
+  --font-primary: Whitney,gg sans,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+  --font-display: Whitney,gg sans,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+}
+
+  /*
+    Visit https://fonts.google.com and select one to your liking.
+    Now just follow this tutorial: https://imgur.com/a/CNbw7xC
+  */
+
+@font-face {
+  font-family: Whitney;
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://discord.com/assets/46933da896ba96126074286056614542.woff2) format("woff2"), url(https://ptb.discord.com/assets/46933da896ba96126074286056614542.woff2) format("woff2"), url(https://canary.discord.com/assets/46933da896ba96126074286056614542.woff2) format("woff2");
+}
+@font-face {
+  font-family: Whitney;
+  font-style: italic;
+  font-weight: 300;
+  src: url(https://discord.com/assets/1651ce6325c0da043476ace0bec3971b.woff2) format("woff2"), url(https://ptb.discord.com/assets/1651ce6325c0da043476ace0bec3971b.woff2) format("woff2"), url(https://canary.discord.com/assets/1651ce6325c0da043476ace0bec3971b.woff2) format("woff2");
+}
+@font-face {
+  font-family: Whitney;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://discord.com/assets/24bda95d153a319704c33329f3ab84bb.woff2) format("woff2"), url(https://ptb.discord.com/assets/24bda95d153a319704c33329f3ab84bb.woff2) format("woff2"), url(https://canary.discord.com/assets/24bda95d153a319704c33329f3ab84bb.woff2) format("woff2");
+}
+@font-face {
+  font-family: Whitney;
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://discord.com/assets/7f18f1d5ab6ded7cf71bbc1f907ee3d4.woff2) format("woff2"), url(https://ptb.discord.com/assets/7f18f1d5ab6ded7cf71bbc1f907ee3d4.woff2) format("woff2"), url(https://canary.discord.com/assets/7f18f1d5ab6ded7cf71bbc1f907ee3d4.woff2) format("woff2");
+}
+@font-face {
+  font-family: Whitney;
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://discord.com/assets/cf4a8a10bbdf9b775fad41e0b9921c84.woff2) format("woff2"), url(https://ptb.discord.com/assets/cf4a8a10bbdf9b775fad41e0b9921c84.woff2) format("woff2"), url(https://canary.discord.com/assets/cf4a8a10bbdf9b775fad41e0b9921c84.woff2) format("woff2");
+}
+@font-face {
+  font-family: Whitney;
+  font-style: italic;
+  font-weight: 500;
+  src: url(https://discord.com/assets/9cfa747e897c772d25efd8e4a42a005e.woff2) format("woff2"), url(https://ptb.discord.com/assets/9cfa747e897c772d25efd8e4a42a005e.woff2) format("woff2"), url(https://canary.discord.com/assets/9cfa747e897c772d25efd8e4a42a005e.woff2) format("woff2");
+}
+@font-face {
+  font-family: Whitney;
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://discord.com/assets/f9e7047f6447547781512ec4b977b2ab.woff2) format("woff2"), url(https://ptb.discord.com/assets/f9e7047f6447547781512ec4b977b2ab.woff2) format("woff2"), url(https://canary.discord.com/assets/f9e7047f6447547781512ec4b977b2ab.woff2) format("woff2");
+}
+@font-face {
+  font-family: Whitney;
+  font-style: italic;
+  font-weight: 600;
+  src: url(https://discord.com/assets/21070f52a8a6a61edef9785eaf303fb8.woff2) format("woff2"), url(https://ptb.discord.com/assets/21070f52a8a6a61edef9785eaf303fb8.woff2) format("woff2"), url(https://canary.discord.com/assets/21070f52a8a6a61edef9785eaf303fb8.woff2) format("woff2");
+}
+@font-face {
+  font-family: Whitney;
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://discord.com/assets/f9c8fcfa7dcc5d6a291a6ebbe3bb847e.woff2) format("woff2"), url(https://ptb.discord.com/assets/f9c8fcfa7dcc5d6a291a6ebbe3bb847e.woff2) format("woff2"), url(https://canary.discord.com/assets/f9c8fcfa7dcc5d6a291a6ebbe3bb847e.woff2) format("woff2");
+}
+@font-face {
+  font-family: Whitney;
+  font-style: italic;
+  font-weight: 700;
+  src: url(https://discord.com/assets/5e1649183589023fb24667a369af585d.woff2) format("woff2"), url(https://ptb.discord.com/assets/5e1649183589023fb24667a369af585d.woff2) format("woff2"), url(https://canary.discord.com/assets/5e1649183589023fb24667a369af585d.woff2) format("woff2");
+}
+
+  /* Do not touch */
+  --update-notice-1: none;
+}
